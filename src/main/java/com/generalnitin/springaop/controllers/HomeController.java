@@ -1,5 +1,6 @@
 package com.generalnitin.springaop.controllers;
 
+import com.generalnitin.springaop.aspects.CustomAnnotation;
 import com.generalnitin.springaop.services.HomeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ public class HomeController {
     }
 
     @GetMapping()
+//    @CustomAnnotation(metricName = "controller")
     public String hello() {
         return homeService.sayHello();
     }
