@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 public class HomeService {
 
     @CustomAnnotation(metricName = "service")
-//    @CustomAnnotation
     public String sayHello() {
         return "Hello World!";
     }
