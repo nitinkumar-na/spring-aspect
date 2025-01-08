@@ -12,8 +12,8 @@ import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 @Aspect
-@Configurable
-@Component
+//@Configurable
+//@Component
 public class LogAspect {
 
     @Around("@annotation(CustomAnnotation)")

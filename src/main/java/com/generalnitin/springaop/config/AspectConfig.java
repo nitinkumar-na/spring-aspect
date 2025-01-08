@@ -9,6 +9,10 @@ import org.springframework.context.annotation.Configuration;
 public class AspectConfig {
     @Bean
     LogAspect logAspect() {
-        return Aspects.aspectOf(LogAspect.class);
+        if (Aspects.hasAspect(LogAspect.class)) {
+            return Aspects.aspectOf(LogAspect.class);
+        } else {
+            return new LogAspect();
+        }
     }
 }
