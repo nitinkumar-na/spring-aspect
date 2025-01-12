@@ -1,6 +1,7 @@
 package com.generalnitin.springaop.aspects;
 
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -19,10 +20,10 @@ import java.util.concurrent.TimeUnit;
 //@Configurable
 @Component
 @EnableTransactionManagement(mode = AdviceMode.ASPECTJ)
-//@Slf4j
+@Slf4j
 public class LogAspect {
 
-    private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
+//    private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
 
     @Around("@annotation(CustomAnnotation)")
     public Object log(ProceedingJoinPoint joinPoint) throws Throwable {
